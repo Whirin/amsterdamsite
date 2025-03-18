@@ -1,0 +1,87 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Slider Functionaliteit ---
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  const nextBtn = document.querySelector('.next');
+  const prevBtn = document.querySelector('.prev');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+
+  // --- Meertalige Functionaliteit ---
+  const translations = {
+    nl: {
+      home: "Home",
+      gallery: "Galerij",
+      map: "Kaart",
+      videos: "Video's",
+      travel: "Reisinformatie",
+      welcome: "Welkom in Amsterdam",
+      intro: "Ontdek de mooiste bezienswaardigheden, architectuur, geschiedenis en natuur van Amsterdam.",
+      galleryTitle: "Prachtige Fotogalerij",
+      mapTitle: "Interactieve Kaart",
+      videosTitle: "Inspirerende Video's",
+      travelTitle: "Reisinformatie",
+      publicTransport: "Openbaar Vervoer",
+      publicTransportDesc: "Amsterdam heeft een uitgebreid netwerk van trams, bussen en metro's. Plan je reis met de GVB app.",
+      cycling: "Fietsen",
+      cyclingDesc: "Fietsen is een van de beste manieren om de stad te verkennen. Huur een fiets en geniet van de grachten en parken.",
+      walking: "Wandelroutes",
+      walkingDesc: "Wandel door de historische straten van Amsterdam en ontdek verborgen juweeltjes in de stad."
+    },
+    en: {
+      home: "Home",
+      gallery: "Gallery",
+      map: "Map",
+      videos: "Videos",
+      travel: "Travel Info",
+      welcome: "Welcome to Amsterdam",
+      intro: "Discover the most beautiful attractions, architecture, history, and nature of Amsterdam.",
+      galleryTitle: "Stunning Photo Gallery",
+      mapTitle: "Interactive Map",
+      videosTitle: "Inspirational Videos",
+      travelTitle: "Travel Information",
+      publicTransport: "Public Transport",
+      publicTransportDesc: "Amsterdam has an extensive network of trams, buses, and metros. Plan your journey with the GVB app.",
+      cycling: "Cycling",
+      cyclingDesc: "Cycling is one of the best ways to explore the city. Rent a bike and enjoy the canals and parks.",
+      walking: "Walking Routes",
+      walkingDesc: "Stroll through the historic streets of Amsterdam and discover hidden gems in the city."
+    }
+  };
+
+  const elementsToTranslate = document.querySelectorAll('[data-key]');
+
+  function translatePage(lang) {
+    elementsToTranslate.forEach(element => {
+      const key = element.getAttribute('data-key');
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  document.getElementById('nlBtn').addEventListener('click', () => {
+    translatePage('nl');
+  });
+
+  document.getElementById('enBtn').addEventListener('click', () => {
+    translatePage('en');
+  });
+
+  // Stel standaard taal in op Nederlands
+  translatePage('nl');
+});
