@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontdek Amsterdam</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Amsterdam Pracht</div>
+      <ul class="nav-links">
+        <li><a href="#home" data-key="home">Home</a></li>
+        <li><a href="#gallery" data-key="gallery">Galerij</a></li>
+        <li><a href="#map" data-key="map">Kaart</a></li>
+        <li><a href="#videos" data-key="videos">Video's</a></li>
+        <li><a href="#travel" data-key="travel">Reisinformatie</a></li>
+      </ul>
+      <div class="language-toggle">
+        <button id="nlBtn">NL</button>
+        <button id="enBtn">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section met slider -->
+    <section id="home" class="section">
+      <h1 data-key="welcome">Welkom in Amsterdam</h1>
+      <p data-key="intro">
+        Ontdek de mooiste bezienswaardigheden, architectuur, geschiedenis en natuur van Amsterdam.
+      </p>
+      <div class="slider">
+        <img src="images/amsterdam1.jpg" alt="Amsterdam beeld 1" class="slide active">
+        <img src="images/amsterdam2.jpg" alt="Amsterdam beeld 2" class="slide">
+        <img src="images/amsterdam3.jpg" alt="Amsterdam beeld 3" class="slide">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </section>
+    
+    <!-- Fotogalerij -->
+    <section id="gallery" class="section">
+      <h2 data-key="galleryTitle">Prachtige Fotogalerij</h2>
+      <div class="gallery">
+        <img src="images/amsterdam4.jpg" alt="Amsterdam beeld 4">
+        <img src="images/amsterdam5.jpg" alt="Amsterdam beeld 5">
+        <img src="images/amsterdam6.jpg" alt="Amsterdam beeld 6">
+      </div>
+    </section>
+    
+    <!-- Interactieve Kaart -->
+    <section id="map" class="section">
+      <h2 data-key="mapTitle">Interactieve Kaart</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2462.221437133119!2d4.891516315987431!3d52.37275997978525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c201d8e1c3%3A0x42276e9b9640b1d!2sAmsterdam!5e0!3m2!1snl!2snl!4v1618888888888" 
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+    
+    <!-- Video's -->
+    <section id="videos" class="section">
+      <h2 data-key="videosTitle">Inspirerende Video's</h2>
+      <div class="video-container">
+        <!-- Vervang VIDEO_ID met een echte YouTube video-ID -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+    
+    <!-- Reisinformatie -->
+    <section id="travel" class="section">
+      <h2 data-key="travelTitle">Reisinformatie</h2>
+      <div class="travel-info">
+        <article>
+          <h3 data-key="publicTransport">Openbaar Vervoer</h3>
+          <p data-key="publicTransportDesc">
+            Amsterdam heeft een uitgebreid netwerk van trams, bussen en metro's. Plan je reis met de GVB app.
+          </p>
+        </article>
+        <article>
+          <h3 data-key="cycling">Fietsen</h3>
+          <p data-key="cyclingDesc">
+            Fietsen is een van de beste manieren om de stad te verkennen. Huur een fiets en geniet van de grachten en parken.
+          </p>
+        </article>
+        <article>
+          <h3 data-key="walking">Wandelroutes</h3>
+          <p data-key="walkingDesc">
+            Wandel door de historische straten van Amsterdam en ontdek verborgen juweeltjes in de stad.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Amsterdam Pracht. Alle rechten voorbehouden.</p>
+  </footer>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
